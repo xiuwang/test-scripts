@@ -1,0 +1,11 @@
+{
+    "kind": "PolicyBinding",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "test",
+        "namespace": "test"
+    },
+    "policyRef": {
+        "namespace": "test"
+    }
+}

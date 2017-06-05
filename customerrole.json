@@ -1,0 +1,22 @@
+{
+    "kind": "Role",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "viewservices",
+        "creationTimestamp": null
+    },
+    "rules": [
+        {
+        "verbs": [
+            "create",
+            "get",
+            "list",
+            "watch",
+            "delete"
+        ],
+        "resources": [
+            "services"
+        ]
+        }
+    ]
+}
