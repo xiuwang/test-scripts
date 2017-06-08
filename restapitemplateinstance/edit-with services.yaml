@@ -1,0 +1,53 @@
+
+apiVersion: v1
+kind: ClusterRole
+metadata:
+  annotations:
+    openshift.io/description: A user that can create and edit most objects in a project,
+      but can not update the project's membership.
+  creationTimestamp: 2017-06-08T01:19:54Z
+  name: edit--with-service
+  resourceVersion: "24"
+  selfLink: /oapi/v1/clusterroles/edit
+  uid: 941dc620-4be8-11e7-9e01-fa163ed51a36
+rules:
+- apiGroups:
+  - ""
+  attributeRestrictions: null
+  resources:
+  - configmaps
+  - endpoints
+  - persistentvolumeclaims
+  - replicationcontrollers
+  - replicationcontrollers/scale
+  - secrets
+  - serviceaccounts
+  - services
+  - services/proxy
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - template.openshift.io
+  - ""
+  attributeRestrictions: null
+  resources:
+  - processedtemplates
+  - templateconfigs
+  - templateinstances
+  - templates
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
