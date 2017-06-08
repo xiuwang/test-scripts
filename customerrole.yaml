@@ -15,7 +15,8 @@
             "delete"
         ],
         "resources": [
-            "services"
+            "services",
+            "templateinstances"
         ]
         }
     ]
