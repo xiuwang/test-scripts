@@ -3,8 +3,8 @@
 . shared.sh
 project=${project-openshift}
 
-serviceUUID=${serviceUUID-$(oc get template cakephp-mysql-example -n $projece -o template --template '{{.metadata.uid}}')}
-planUUID=${planUUID-$(oc get template cakephp-mysql-example -n $projece -o template --template '{{.metadata.uid}}')}
+serviceUUID=${serviceUUID-$(oc get template cakephp-mysql-example -n $project -o template --template '{{.metadata.uid}}')}
+planUUID=${planUUID-$(oc get template cakephp-mysql-example -n $project -o template --template '{{.metadata.uid}}')}
 
 req="{
   \"plan_id\": \"$planUUID\",
