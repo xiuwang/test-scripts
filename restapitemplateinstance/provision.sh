@@ -9,12 +9,14 @@ planUUID=${planUUID-$(oc get template cakephp-mysql-example -n $project -o templ
 req="{
   \"plan_id\": \"$planUUID\",
   \"service_id\": \"$serviceUUID\",
+  \"context\": {
+    \"platform\": \"kubernetes\",
+    \"namespace\": \"$namespace\"
+  },
   \"parameters\": {
     \"MYSQL_USER\": \"username\",
-    \"template.openshift.io/namespace\": \"$namespace\",
     \"template.openshift.io/requester-username\": \"$requesterUsername\"
-  },
-  \"accepts_incomplete\": true
+  }
 }"
 
 curl \
@@ -25,4 +27,4 @@ curl \
   -d "$req" \
   -v \
   $curlargs \
-  $endpoint/v2/service_instances/$instanceUUID
+  $endpoint/v2/service_instances/$instanceUUID'?accepts_incomplete=true'
