@@ -8,9 +8,6 @@
         "requester": {
             "username": "xiuwang"
         },
-        "secret": {
-            "name": "abcd"
-        },
         "template": {
             "labels": {
                 "template": "cakephp-mysql-example"
@@ -27,12 +24,8 @@
                     "template.openshift.io/provider-display-name": "Red Hat, Inc.",
                     "template.openshift.io/support-url": "https://access.redhat.com"
                 },
-                "creationTimestamp": "2017-05-26T06:52:35Z",
                 "name": "cakephp-mysql-example",
                 "namespace": "test",
-                "resourceVersion": "26481",
-                "selfLink": "/oapi/v1/namespaces/test/templates/cakephp-mysql-example",
-                "uid": "e6885f4a-41df-11e7-84e6-fa163e002b5b"
             },
             "objects": [
                 {
@@ -160,7 +153,9 @@
                     "kind": "DeploymentConfig",
                     "metadata": {
                         "annotations": {
-                            "description": "Defines how to deploy the application server"
+                            "description": "Defines how to deploy the application server",
+                            "template.alpha.openshift.io/wait-for-ready": "true"
+
                         },
                         "name": "${NAME}"
                     },
@@ -336,6 +331,7 @@
                     "metadata": {
                         "annotations": {
                             "description": "Defines how to deploy the database"
+                            "template.alpha.openshift.io/wait-for-ready": "true"
                         },
                         "name": "${DATABASE_SERVICE_NAME}"
                     },

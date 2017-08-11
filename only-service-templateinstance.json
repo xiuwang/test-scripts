@@ -8,9 +8,6 @@
         "requester": {
             "username": "xiuwang"
         },
-        "secret": {
-            "name": "abcd"
-        },
         "template": {
             "labels": {
                 "template": "cakephp-mysql-example"
